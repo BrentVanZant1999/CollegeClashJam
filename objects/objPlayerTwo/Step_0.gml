@@ -31,47 +31,19 @@ if (isOn) {
 	}
 }
 else {
-	if keyboard_check(ord("M")){
-		if (mySkinNum<objDataHolder.skinNums-1){
-			mySkinNum++;
+	if keyboard_check(ord("Z")){
+		if (canPress) {
+			if (mySkinNum<5){
+				mySkinNum++;
+			}
+			else {
+				mySkinNum = 0;
+			}
+			canPress = false;
+			alarm[1] = 5; 
 		}
 	}
-	else {
-		mySkinNum = 0;
-	}
+	
 			
 }
-switch(mySkinNum){
-	case(0): 
-	{
-	object_set_sprite( 0, spr_esports1 );	
-	}
-	break;
-	case(1): 
-	{
-	object_set_sprite( 0, spr_esports2 );	
-	}
-	break;
-	case(2): 
-	{
-	object_set_sprite( 0, spr_esports3 );	
-	}
-	break;
-	case(3): 
-	{
-	object_set_sprite( 0, spr_esports4 );	
-	}
-	break;
-	case(4): 
-	{
-	object_set_sprite( 0, spr_esports5);	
-	}
-	break;
-	case(5): 
-	{
-	object_set_sprite( 0, spr_esports6 );	
-	}
-	break;
-}
-
-
+sprite_index = mySkinNum;

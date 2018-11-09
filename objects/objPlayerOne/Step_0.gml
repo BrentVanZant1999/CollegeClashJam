@@ -1,5 +1,4 @@
 if (isOn) {
-
 	var h = 0
 	var v = 0
 	actionPressed = false
@@ -29,48 +28,32 @@ if (isOn) {
 	if ( v == -1 ) {
 		physics_apply_impulse(x, y, 0,-mySpeed);	
 	}
+	
+	if (actionPressed) {
+		
+	}
+	else if (actionPressed1) {
+		
+	}
+    else if (actionPressed2) {
+		
+	}
+	else if (actionPressed3) {
+		
+	}
 }
 else {
 	if keyboard_check(ord("M")){
-		if (mySkinNum<objDataHolder.skinNums-1){
-			mySkinNum++;
+		if (canPress) {
+			if (mySkinNum<5){
+				mySkinNum++;
+			}
+			else {
+				mySkinNum = 0;
+			}
 		}
 	}
-	else {
-		mySkinNum = 0;
-	}
+
 			
 }
-switch(mySkinNum){
-	case(0): 
-	{
-	object_set_sprite( 0, spr_esports1 );	
-	}
-	break;
-	case(1): 
-	{
-	object_set_sprite( 0, spr_esports2 );	
-	}
-	break;
-	case(2): 
-	{
-	object_set_sprite( 0, spr_esports3 );	
-	}
-	break;
-	case(3): 
-	{
-	object_set_sprite( 0, spr_esports4 );	
-	}
-	break;
-	case(4): 
-	{
-	object_set_sprite( 0, spr_esports5);	
-	}
-	break;
-	case(5): 
-	{
-	object_set_sprite( 0, spr_esports6 );	
-	}
-	break;
-}
-
+sprite_index = mySkinNum;
